@@ -29,14 +29,13 @@
             height: 100px;
             margin: 10px;
             border: 2px solid #ccc;
-            /* Zoom/Transition properties removed */
         }
 
-        /* Hover effect removed to stop zooming */
         .preview:hover {
             cursor: pointer;
         }
         
+        /* Focus Indicator for Keyboard Accessibility */
         .preview:focus {
             outline: 5px solid orange; 
             outline-offset: 3px;
@@ -50,6 +49,7 @@
     <div id="image">
         Hover over or focus on an image below to display here.
     </div>
+
     <div id="gallery">
         <img class="preview" id="img1" src="https://picsum.photos/id/1015/400/300" 
              alt="Beautiful mountain landscape with a winding road." 
@@ -81,6 +81,7 @@
              onmouseover="upDate(this)" onmouseout="undo()"
              onfocus="upDate(this)" onblur="undo()">
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
