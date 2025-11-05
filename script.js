@@ -1,4 +1,5 @@
 function upDate(previewPic) {
+    // Console log for event trigger check
     console.log("Image activated:", previewPic.src); 
     
     const display = document.getElementById('image');
@@ -9,16 +10,26 @@ function upDate(previewPic) {
 
 function undo() {
     console.log("Image deactivated");
+    
     const display = document.getElementById('image');
+
+    // Resetting background to an empty URL (imperfection left in)
     display.style.backgroundImage = "url('')"; 
+    
     display.innerHTML = "Hover over or focus on an image below to display here.";
 }
 
+// Function called by the body's onload event
 function setupGallery() {
-    console.log("Window loaded: Starting gallery setup."); 
+    // Console log for onload event trigger check
+    console.log("Window loaded: Starting gallery setup to add tabindex attributes."); 
+
+    // Select all preview images
     var images = document.querySelectorAll('#gallery .preview');
+
+    // Write a for loop to loop through each image
     for (var i = 0; i < images.length; i++) {
-        images[i].setAttribute('tabindex', '0'); 
-        console.log("Tabindex added to:", images[i].id); 
+        // Add the tabindex attributes
+        images[i].setAttribute('tabindex', '0');
     }
 }
